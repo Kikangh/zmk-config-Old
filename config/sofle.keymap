@@ -12,7 +12,8 @@
 #define LOWER   1
 #define RAISE   2
 #define ARROW   3
-#define SCREEN  4
+#define ARROW   4
+#define SCREEN  5
 
 
 
@@ -28,11 +29,11 @@
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  |       |  N   |  M    |  ,    |  .   |   /   | SHIFT |
 //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
             bindings = <
-&kp GRAVE       &kp N1       &kp N2         &kp N3        &kp N4       &kp N5                           &kp N6 &kp N7    &kp N8    &kp N9   &kp N0   &kp BSPC
-&kp ESC         &kp Q        &kp W          &kp E         &kp R        &kp T                            &kp Y  &kp U     &kp I     &kp O    &kp P    &kp LBKT
-&mt LSHFT TAB   &mt LSHFT A  &mt LCTRL S    &mt LALT D    &lt ARROW F  &kp G                            &kp H  &kp J     &kp K     &kp L    &kp SEMI &kp SQT
-&kp LSHFT       &kp Z        &kp X          &kp C         &kp V        &kp B  &kp C_MUTE   &kp C_MUTE   &kp N  &kp M     &kp COMMA &kp DOT  &kp FSLH &kp BSLH
-                             &kp LGUI       &kp LALT      &kp LCTRL    &mo 1  &kp RET       &kp SPACE &mo 2  &kp RCTRL &kp RALT  &kp RGUI
+&kp ESC         &kp N1       &kp N2         &kp N3        &kp N4       &kp N5                                       &kp N6     &kp N7     &kp N8     &kp N9      &kp N0         &kp BSPC
+&kp TAB         &kp Q        &kp W          &kp E         &kp R        &kp T                                        &kp Y      &kp U      &kp I      &kp O       &kp P          &kp LBKT
+&mt LSHFT TAB   &mt LSHFT A  &mt LCTRL S    &mt LALT D    &lt ARROW F  &kp G                                        &kp H      &mt LGUI J &mt LALT K &mt LCTRL L &mt LSHFT SEMI &kp SQT
+&kp LSHFT       &kp Z        &kp X          &kp C         &lt SCREEN V &kp B      &kp C_MUTE       &kp C_MUTE       &kp N      &kp M      &kp COMMA  &kp DOT     &kp FSLH       &kp BSLH
+                             &kp LGUI       &kp LALT      &kp LCTRL    &lt 1 RET  &mt LGUI SPACE   &lt NUMBER SPACE &lt 2 RBKT &kp RCTRL  &kp RALT    &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -86,7 +87,45 @@
             bindings = <
 &trans    &kp F1    &kp F2    &kp F3      &kp F4    &kp F5                    &kp F6    &kp F7   &kp F8          &kp F9    &kp F10   &kp F11
 &kp GRAVE &kp N1    &kp N2    &kp N3      &kp N4    &kp N5                    &kp N6    &kp N7   &kp N8          &kp N9    &kp N0    &kp F12
-&trans    &kp EXCL  &kp AT    &kp HASH    &kp DLLR  &kp PRCNT                 &kp CARET &kp AMPS &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp PIPE
+&trans    &kp EXCL  &kp AT    &kp HASH    &trans  &kp PRCNT                 &kp CARET &kp LEFT &kp UP &kp DOWN  &kp RIGHT  &kp PIPE
+&trans    &kp EQUAL &kp MINUS &kp KP_PLUS &kp LBRC  &kp RBRC  &trans   &trans &kp LBKT  &kp RBKT &kp SEMI        &kp COLON &kp BSLH  &trans
+                    &trans    &trans      &trans    &trans    &trans   &trans &trans    &trans   &trans          &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+        number_layer {
+// TODO: Some binds are waiting for shifted keycode support.
+// ------------------------------------------------------------------------------------------------------------
+// |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
+// | `     |   1 |   2 |   3  |   4  |   5  |                   |   6  |   7   |   8   |   9  |    0  |  F12  |
+// |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   |   |
+// |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
+//               |     |      |      |      |        |  |       |      |       |       |      |
+            bindings = <
+&trans    &kp F1    &kp F2    &kp F3      &kp F4    &kp F5                    &kp F6    &kp F7   &kp F8          &kp F9    &kp F10   &kp F11
+&kp GRAVE &kp N1    &kp N2    &kp N3      &kp N4    &kp N5                    &kp N6    &kp N7   &kp N8          &kp N9    &kp N0    &kp F12
+&trans    &kp EXCL  &kp AT    &kp HASH    &trans  &kp PRCNT                 &kp CARET &kp LEFT &kp UP &kp DOWN  &kp RIGHT  &kp PIPE
+&trans    &kp EQUAL &kp MINUS &kp KP_PLUS &kp LBRC  &kp RBRC  &trans   &trans &kp LBKT  &kp RBKT &kp SEMI        &kp COLON &kp BSLH  &trans
+                    &trans    &trans      &trans    &trans    &trans   &trans &trans    &trans   &trans          &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+        };
+
+            screen_layer {
+// TODO: Some binds are waiting for shifted keycode support.
+// ------------------------------------------------------------------------------------------------------------
+// |       |  F1 |  F2 |  F3  |  F4  |  F5  |                   |  F6  |  F7   |  F8   |  F9  |  F10  |  F11  |
+// | `     |   1 |   2 |   3  |   4  |   5  |                   |   6  |   7   |   8   |   9  |    0  |  F12  |
+// |       |  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |   |   |
+// |       |  =  |  -  |  +   |  {   |  }   |        |  |       |  [   |  ]    |  ;    |  :   |   \   |       |
+//               |     |      |      |      |        |  |       |      |       |       |      |
+            bindings = <
+&trans    &kp F1    &kp F2    &kp F3      &kp F4    &kp F5                    &kp F6    &kp F7   &kp F8          &kp F9    &kp F10   &kp F11
+&kp GRAVE &kp N1    &kp N2    &kp N3      &kp N4    &kp N5                    &kp N6    &kp N7   &kp N8          &kp N9    &kp N0    &kp F12
+&trans    &kp EXCL  &kp AT    &kp HASH    &trans  &kp PRCNT                 &kp CARET &kp LEFT &kp UP &kp DOWN  &kp RIGHT  &kp PIPE
 &trans    &kp EQUAL &kp MINUS &kp KP_PLUS &kp LBRC  &kp RBRC  &trans   &trans &kp LBKT  &kp RBKT &kp SEMI        &kp COLON &kp BSLH  &trans
                     &trans    &trans      &trans    &trans    &trans   &trans &trans    &trans   &trans          &trans
             >;
