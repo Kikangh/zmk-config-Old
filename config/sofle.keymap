@@ -26,8 +26,13 @@
         combo_w {
             timeout-ms = <50>;
             key-positions = <45 46>;
-            bindings = <&kp W>;
+            bindings = <&kp RBKT>;
         };
+        combo_arrow {
+            timeout-ms = <50>;
+            key-positions = <53 54>;
+            bindings = <&lt ARROW>;
+        }; 
     };
 };
 // ------------------------------------------------------------------------------------------------------------
@@ -66,7 +71,7 @@
 &kp TAB     &kp Q        &kp W          &kp E         &kp R           &kp T                                            &kp Y      &kp U      &kp I      &kp O       &kp P          &kp LBKT
 &kp LSHFT   &hm LSHFT A  &hm LCTRL S    &hm LALT D    &hm LGUI F      &lt ARROW G                                      &kp H      &hm RGUI J &hm RALT K &hm RCTRL L &hm RSHFT SEMI &kp SQT
 &kp F3      &kp Z        &kp X          &kp C         &kp V           &lt SCREEN B   &kp C_MUTE       &kp C_MUTE       &kp N      &kp M      &kp COMMA  &kp DOT     &kp FSLH       &kp BSLH
-                         &kp LGUI       &kp LALT      &lt 1 LG(LA(H)) &mt LGUI SPACE &lt ARROW RET    &lt NUMBER SPACE &lt 2 RBKT &kp RCTRL  &kp RALT   &kp RGUI
+                         &kp LGUI       &kp LALT      &kp LG(LA(H))   &mt LGUI SPACE &lt 1 RET    &lt NUMBER SPACE &lt 2 RBKT &kp RCTRL  &kp RALT   &kp RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_VOL_UP C_VOL_DN>;
