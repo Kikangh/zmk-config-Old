@@ -136,7 +136,7 @@
 &trans &none      &none      &none            &none                 &none                       &none     &none             &none            &none            &none            &kp BSPC
 &trans &kp LC(N1) &kp LC(N2) &kp LG(LS(SQT))  &kp LS(LA(LG(SPACE))) &kp BSPC                    &kp N6    &kp LA(LG(LS(V))) &kp LC(LS(TAB))  &kp LC(TAB)      &none            &kp DEL
 &trans &kp LSHFT  &kp LCTRL  &kp LALT         &kp LGUI              &none                       &kp TILDE &kp LEFT          &kp UP           &kp DOWN         &kp RIGHT        &kp BSPC
-&trans &none      &none      &kp LG(LS(LBKT)) &kp LG(LBKT)          &kp LG(TAB) &trans   &trans &kp LS(N) &kp GRAVES        &kp RA(RS(LEFT)) &kp RG(RS(LEFT)) &kp RG(LS(FSLH)) &kp RA(RC(RG(J)))
+&trans &none      &none      &kp LG(LS(LBKT)) &kp LG(LBKT)          &kp LG(TAB) &trans   &trans &kp LS(N) &kp GRAVE        &kp RA(RS(LEFT)) &kp RG(RS(LEFT)) &kp RG(LS(FSLH)) &kp RA(RC(RG(J)))
                   &trans     &trans           &trans                &trans      &trans   &trans &trans    &trans            &trans           &trans
             >;
 
